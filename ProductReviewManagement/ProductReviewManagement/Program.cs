@@ -54,6 +54,7 @@ namespace ProductReviewManagement
                 dataTable.Rows.Add(lists.ProductId, lists.UserId, lists.Rating, lists.Review, lists.isLike);
 
             }
+            management.RetrieveRecordsWithIsLikeTrue(dataTable);
         }
     }
 }

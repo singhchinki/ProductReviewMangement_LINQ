@@ -10,12 +10,12 @@ namespace ProductReviewManagement
     {
         private readonly DataTable dataTable = new DataTable();
         public void display(List<ProductReview> recordData)
-         {
+        {
             foreach (var list in recordData)
             {
                 Console.WriteLine("Product id = " + list.ProductId + "User id = " + list.UserId + "Rating is = " + list.Rating + " Review is = " + list.Review + " isLike = " + list.isLike);
             }
-         }
+        }
         public void topRecords(List<ProductReview> listProductReviews)
         {
             var recordData = (from productReview in listProductReviews orderby productReview.Rating descending select productReview).Take(3).ToList();
@@ -79,6 +79,14 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product id = " + lists.Field<int>("ProductId") + "User id = " + lists.Field<int>("UserId") + "Rating is = " + lists.Field<double>("Rating") + " Review is = " + lists.Field<string>("Review") + " isLike = " + lists.Field<bool>("isLike"));
             }
         }
-
+        public void findAvrageRating(List<ProductReview> listProductReviews)
+        {
+            var recordData = listProductReviews.GroupBy(x => x.ProductId).Select(x => new { ProductId = x.Key, Average = x.Average(y => y.Rating) });
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductId + "----------" + list.Average);
+            }
+        }
     }
+
 }

@@ -8,7 +8,8 @@ namespace ProductReviewManagement
 {
     public class Management
     {
-         public void display(List<ProductReview> recordData)
+        private readonly DataTable dataTable = new DataTable();
+        public void display(List<ProductReview> recordData)
          {
             foreach (var list in recordData)
             {
@@ -59,6 +60,15 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine("\t" + list.ProductID + "\t|\t" + list.Review);
             }
+        }
+        public DataTable createTable(List<ProductReview> listProductReviews)
+        {
+            dataTable.Columns.Add("ProductId");
+            dataTable.Columns.Add("UserId");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike");
+            return dataTable;
         }
 
     }

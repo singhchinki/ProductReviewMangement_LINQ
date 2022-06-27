@@ -57,6 +57,7 @@ namespace ProductReviewManagement
             management.RetrieveRecordsWithIsLikeTrue(dataTable);
             management.findAvrageRating(list);
             management.recordsWithNiceReview(list);
+            management.getRecordsWithUserIdTen(list);
         }
     }
 }

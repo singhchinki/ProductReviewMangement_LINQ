@@ -93,6 +93,12 @@ namespace ProductReviewManagement
             Console.WriteLine("\n Records with nice review = ");
             display(recordData);
         }
+        public void getRecordsWithUserIdTen(List<ProductReview> listProductReviews)
+        {
+            var recordData = (from productReview in listProductReviews where (productReview.UserId == 10) orderby productReview.Rating descending select productReview).ToList();
+            Console.WriteLine("\n Records whose user id 10 with rating  = ");
+            display(recordData);
+        }
     }
 
 }

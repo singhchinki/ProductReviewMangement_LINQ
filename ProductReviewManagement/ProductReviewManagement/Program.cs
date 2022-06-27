@@ -10,7 +10,6 @@ namespace ProductReviewManagement
             List<ProductReview> list = new List<ProductReview>()
             {
             new ProductReview() { ProductId = 1, UserId = 1, Rating = 5.5, Review = "Good", isLike=true},
-            new ProductReview() { ProductId = 1, UserId = 1, Rating = 4.5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 2, UserId = 1, Rating = 6, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 2, UserId = 1, Rating = 5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 4, UserId = 1, Rating = 5, Review = "Nice", isLike=true },
@@ -33,6 +32,7 @@ namespace ProductReviewManagement
             }
             Management management = new Management();
             management.topRecords(list);
+            management.selectedRecords(list);
         }
     }
 }

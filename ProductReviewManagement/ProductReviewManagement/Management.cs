@@ -21,5 +21,11 @@ namespace ProductReviewManagement
             Console.WriteLine("\n Top 3 records = ");
             display(recordData);
         }
+        public void selectedRecords(List<ProductReview> listProductReviews)
+        {
+            var recordData = (from productReview in listProductReviews where (productReview.ProductId == 1 || productReview.ProductId == 4 || productReview.ProductId == 9) && productReview.Rating > 3 select productReview).ToList();
+            Console.WriteLine("\n Rating grater than 3 with product id 1,4,9 = ");
+            display(recordData);
+        }
     }
 }

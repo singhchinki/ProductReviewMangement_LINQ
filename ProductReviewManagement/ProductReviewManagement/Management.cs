@@ -87,6 +87,12 @@ namespace ProductReviewManagement
                 Console.WriteLine(list.ProductId + "----------" + list.Average);
             }
         }
+        public void recordsWithNiceReview(List<ProductReview> listProductReviews)
+        {
+            var recordData = (from productReview in listProductReviews where (productReview.Review.Equals("Nice")) select productReview).ToList();
+            Console.WriteLine("\n Records with nice review = ");
+            display(recordData);
+        }
     }
 
 }

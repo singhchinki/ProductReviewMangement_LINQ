@@ -51,6 +51,15 @@ namespace ProductReviewManagement
             Console.WriteLine("\n Top 5 records from list = ");
             display(recordData);
         }
+        public void productIDAndReviewUsingSelectLINQ(List<ProductReview> productReviews)
+        {
+            var recordData = productReviews.Select(reviews => new { ProductID = reviews.ProductId, Review = reviews.Review });
+            Console.WriteLine("Product ID\t|\tReview");
+            foreach (var list in recordData)
+            {
+                Console.WriteLine("\t" + list.ProductID + "\t|\t" + list.Review);
+            }
+        }
 
     }
 }

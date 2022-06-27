@@ -36,6 +36,7 @@ namespace ProductReviewManagement
             management.retrieveCountOfRecords(list);
             management.retrieveProductdAndReview(list);
             management.skipTopFiveRecords(list);
+            management.productIDAndReviewUsingSelectLINQ(list);
         }
     }
 }

@@ -31,6 +31,8 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine("Product id = " + lists.ProductId + "User id = " + lists.UserId + "Rating is = " + lists.Rating + " Review is = " + lists.Review + " isLike = " + lists.isLike);
             }
+            Management management = new Management();
+            management.topRecords(list);
         }
     }
 }

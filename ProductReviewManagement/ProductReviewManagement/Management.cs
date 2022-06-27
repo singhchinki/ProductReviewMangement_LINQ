@@ -27,5 +27,14 @@ namespace ProductReviewManagement
             Console.WriteLine("\n Rating grater than 3 with product id 1,4,9 = ");
             display(recordData);
         }
+        public void retrieveCountOfRecords(List<ProductReview> listProductReviews)
+        {
+            var recordData = listProductReviews.GroupBy(x => x.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() });
+            Console.WriteLine("\n Product id and count = ");
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductId + " = " + list.Count);
+            }
+        }
     }
 }
